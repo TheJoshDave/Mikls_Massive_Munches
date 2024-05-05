@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/audio/pop.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/whack.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/scripts/button/buy_sell.gd" type="Script" id=3]
+
+[node name="buy_sell" type="Button"]
+margin_right = 40.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grid" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+
+[node name="bad" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+[connection signal="pressed" from="." to="." method="_on_buy_sell_pressed"]

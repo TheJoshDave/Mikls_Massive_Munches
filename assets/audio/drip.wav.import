@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drip.wav-fa4e28120c2a3d8f4d91d25fc39f1ff2.sample"
+
+[deps]
+
+source_file="res://assets/audio/drip.wav"
+dest_files=[ "res://.import/drip.wav-fa4e28120c2a3d8f4d91d25fc39f1ff2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

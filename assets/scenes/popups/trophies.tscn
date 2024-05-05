@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="scoring" type="Node2D"]
+z_index = 1

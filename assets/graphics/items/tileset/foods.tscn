@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/graphics/items/Narwhale.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/items/Cheese Stick.png" type="Texture" id=2]
+[ext_resource path="res://assets/graphics/items/Pizza.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/items/Bone.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/items/Cheese Square.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/items/Tardigrade.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/items/Waffle.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/items/Bone Marrow.png" type="Texture" id=8]
+[ext_resource path="res://assets/graphics/items/Poncho.png" type="Texture" id=9]
+[ext_resource path="res://assets/graphics/items/Shot.png" type="Texture" id=10]
+[ext_resource path="res://assets/graphics/items/Pickle.png" type="Texture" id=11]
+[ext_resource path="res://assets/graphics/items/Dave.png" type="Texture" id=12]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bone" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="bone_marrow" type="Sprite" parent="."]
+position = Vector2( 40, 8 )
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="cheese_sqaure" type="Sprite" parent="."]
+position = Vector2( 72, 8 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="cheese_stick" type="Sprite" parent="."]
+position = Vector2( 104, 8 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="narwhale" type="Sprite" parent="."]
+position = Vector2( 8, 40 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="pickle" type="Sprite" parent="."]
+position = Vector2( 40, 40 )
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Pizza" type="Sprite" parent="."]
+position = Vector2( 72, 40 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="poncho" type="Sprite" parent="."]
+position = Vector2( 104, 40 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="shot" type="Sprite" parent="."]
+position = Vector2( 8, 72 )
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="tardigrade" type="Sprite" parent="."]
+position = Vector2( 40, 72 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="waffle" type="Sprite" parent="."]
+position = Vector2( 72, 72 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="dave" type="Sprite" parent="."]
+position = Vector2( 96, 64 )
+texture = ExtResource( 12 )
+centered = false

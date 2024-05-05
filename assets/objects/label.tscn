@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/scripts/text/label.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/comic_sans.tres" type="DynamicFont" id=2]
+
+[node name="label" type="Label"]
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Text"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

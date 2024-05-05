@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/graphics/player/mikl_up0.png" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/graphics/player/mikl_forward.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/player/mikl_up1.png" type="Texture" id=4]
+[ext_resource path="res://assets/audio/game_over.wav" type="AudioStream" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "forward"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("0:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "up"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("0:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("1/sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="0" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite" parent="0"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="area_player" type="Area2D" parent="0"]
+gravity = 0.0
+
+[node name="collision" type="CollisionPolygon2D" parent="0/area_player"]
+polygon = PoolVector2Array( 5, 7, 10, 2, 13, 0, 24, 0, 28, 2, 30, 2, 33, 4, 35, 6, 36, 9, 36, 18, 34, 24, 33, 31, 31, 34, 29, 36, 29, 38, 27, 40, 31, 41, 32, 42, 33, 47, 33, 49, 1, 49, 0, 48, 0, 46, 2, 44, 5, 42, 14, 42, 14, 41, 12, 39, 12, 36, 8, 32, 4, 25, 2, 18, 2, 12 )
+
+[node name="1" type="Node2D" parent="."]
+visible = false
+position = Vector2( 0, 9 )
+
+[node name="sprite" type="AnimatedSprite" parent="1"]
+frames = SubResource( 1 )
+centered = false
+
+[node name="area_player" type="Area2D" parent="1"]
+gravity = 0.0
+
+[node name="collision" type="CollisionPolygon2D" parent="1/area_player"]
+polygon = PoolVector2Array( 0, 23, 0, 12, 2, 6, 5, 2, 9, 0, 18, 0, 31, 3, 40, 9, 40, 15, 36, 24, 40, 33, 44, 32, 50, 32, 51, 33, 52, 40, 20, 40 )
+
+[node name="end" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/forward = SubResource( 2 )
+anims/up = SubResource( 3 )

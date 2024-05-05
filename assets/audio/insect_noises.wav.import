@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/insect_noises.wav-f678e5e94c6b2706e090c4444fc1562a.sample"
+
+[deps]
+
+source_file="res://assets/audio/insect_noises.wav"
+dest_files=[ "res://.import/insect_noises.wav-f678e5e94c6b2706e090c4444fc1562a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

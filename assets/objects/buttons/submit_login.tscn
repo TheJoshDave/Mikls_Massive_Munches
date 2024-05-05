@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/audio/pop.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/scripts/button/submit_login.gd" type="Script" id=2]
+
+[node name="button" type="Label"]
+margin_right = 512.0
+margin_bottom = 288.0
+text = "Button"
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 512.0
+margin_bottom = 288.0
+focus_mode = 2
+color = Color( 1, 1, 1, 0.498039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="TextureButton" parent="."]
+margin_right = 512.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+bus = "effects"
+[connection signal="button_down" from="button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="audio" to="." method="_on_audio_finished"]
